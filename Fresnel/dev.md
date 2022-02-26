@@ -3,15 +3,19 @@
 
 ## 1. 数据格式
 
-计划
+### 1.1 计划 plan
+
 ```json
 {
 	type: 'plan',
 	id: 2456,
-	room_id: 
+	room: 1,
+	persion: 56348, 
 	begin: '2022-02-26',
 	sustain: 25,
 	interval: 24,
-	fragment:
+	fragment: [
+		
+	]
 }
 ``` 

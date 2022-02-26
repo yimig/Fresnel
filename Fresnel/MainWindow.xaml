@@ -4,9 +4,54 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Fresnel"
+        xmlns:wpf="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        ResizeMode="NoResize"
+        Title="MainWindow" Height="425" Width="700" WindowStyle="None"
+        Loaded="MainWindow_OnLoaded">
+    <Window.Resources>
+        <ResourceDictionary Source="Resource/StyleResource.xaml" />
+    </Window.Resources>
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top" Height="25" Background="{StaticResource MainColor}">
+            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                <Button Name="btnMenu"
+                        ToolTip="菜单"
+                        Click="BtnMenu_OnClick"
+                        Initialized="BtnMenu_OnInitialized"
+                        Style="{StaticResource ButtonTriggerStyle}">
+                    <Button.ContextMenu>
+                        <ContextMenu Name="contextMenu">
+                            <MenuItem Header="强制重载页面" Name="miRefurbish" Click="MiRefurbish_OnClick"></MenuItem>
+                            <MenuItem Header="前端控制台" Name="miConsole" Click="MiConsole_OnClick"></MenuItem>
+                            <MenuItem Header="日志" Name="miLog" Click="MiLog_OnClick"></MenuItem>
+                            <MenuItem Header="关于" Name="miAbout" Click="MiAbout_OnClick"></MenuItem>
+                        </ContextMenu>
+                    </Button.ContextMenu>
+                    <Image Source="/Resource/icon/menu.png" Height="{StaticResource TitleIconLength}" Width="{StaticResource TitleIconLength}"></Image>
+                </Button>
+                <Button Name="btnMinisize"
+                        ToolTip="最小化"
+                        Click="BtnMinisize_OnClick"
+                        Style="{StaticResource ButtonTriggerStyle}">
+                    <Image Source="/Resource/icon/minisize.png" Height="{StaticResource TitleIconLength}" Width="{StaticResource TitleIconLength}"></Image>
+                </Button>
+                <Button Name="btnClose"
+                        ToolTip="关闭"
+                        Click="BtnClose_OnClick"
+                        Style="{StaticResource CloseButtonTriggerStyle}">
+                    <Image Source="/Resource/icon/close.png" Height="{StaticResource TitleIconLength}" Width="{StaticResource TitleIconLength}"></Image>
+                </Button>
+            </StackPanel>
+            <Grid Name="gdTitle"
+                  Background="Transparent"
+                  MouseLeftButtonDown="GdTitle_OnMouseLeftButtonDown"
+                  MouseMove="GdTitle_OnMouseMove"
+                  MouseLeftButtonUp="GdTitle_OnMouseLeftButtonUp"
+                  MouseLeave="GdTitle_OnMouseLeave">
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White">title</TextBlock>
+            </Grid>
+        </DockPanel>
+        <wpf:ChromiumWebBrowser Name="mybrower"></wpf:ChromiumWebBrowser>
+    </DockPanel>
 </Window>
