@@ -80,7 +80,11 @@ namespace Fresnel
 
         private void BtnClose_OnClick(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("确定要关闭预约程序吗？", "程序将关闭", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                this.Close();
+                Application.Current.Shutdown(0);
+            }
         }
 
         private void MiRefurbish_OnClick(object sender, RoutedEventArgs e)
@@ -97,12 +101,12 @@ namespace Fresnel
 
         private void MiLog_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            new LogWindow().Show();
         }
 
         private void MiAbout_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            new AboutWindow().ShowDialog();
         }
     }
 }

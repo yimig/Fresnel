@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
-    <Brush x:Key="MainColor">#35928b</Brush>
+    <Brush x:Key="MainColor">#5ba2ff</Brush>
     <Brush x:Key="SubColor">#34d399</Brush>
     <Style x:Key="ButtonTriggerStyle" TargetType="Button">
         <Setter Property="Template">
