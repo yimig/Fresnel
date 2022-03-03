@@ -47,8 +47,8 @@ namespace Fresnel
         {
             if (moveMode)
             {
-                this.Left = this.Left + (e.GetPosition(this).X - mousePoint.X);
-                this.Top = this.Top + (e.GetPosition(this).Y - mousePoint.Y);
+                this.Left += e.GetPosition(this).X - mousePoint.X;
+                this.Top += e.GetPosition(this).Y - mousePoint.Y;
             }
         }
 

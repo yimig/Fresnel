@@ -6,7 +6,11 @@
         xmlns:local="clr-namespace:Fresnel"
         mc:Ignorable="d"
         Title="LogWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top" Margin="10 10 10 5">
+            <Button DockPanel.Dock="Right" Width="80">Search</Button>
+            <TextBox></TextBox>
+        </DockPanel>
+        <TextBox IsReadOnly="True" Margin="10 5 10 10"></TextBox>
+    </DockPanel>
 </Window>
